@@ -1,4 +1,4 @@
-import { ForumFormData, ValidationErrors, Speaker } from '@/types/forum';
+import { ForumFormData, Speaker, ValidationErrors } from '@/types/forum';
 
 interface Props {
     formData: ForumFormData;
@@ -42,6 +42,7 @@ const Step4Speakers = ({ formData, updateFormData, errors }: Props) => {
     };
 
     const moveSpeaker = (index: number, direction: 'up' | 'down') => {
+        console.log(...formData.speakers);
         const newSpeakers = [...formData.speakers];
         const targetIndex = direction === 'up' ? index - 1 : index + 1;
 

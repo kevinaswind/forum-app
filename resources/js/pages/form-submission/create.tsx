@@ -1,11 +1,11 @@
+import Step1ForumInfo from '@/pages/form-submission/steps/step-1-forum-info';
+import Step2Organizer from '@/pages/form-submission/steps/step-2-organizer';
+import Step3CoOrganizer from '@/pages/form-submission/steps/step-3-co-organizer';
+import Step4Speakers from '@/pages/form-submission/steps/step-4-speakers';
+import Step5Submitter from '@/pages/form-submission/steps/step-5-submitter';
 import { ForumFormData, Speaker, ValidationErrors } from '@/types/forum';
 import { router } from '@inertiajs/react';
 import { useState } from 'react';
-import Step3CoOrganizer from '@/pages/form-submission/steps/step-3-co-organizer';
-import Step1ForumInfo from '@/pages/form-submission/steps/step-1-forum-info';
-import Step2Organizer from '@/pages/form-submission/steps/step-2-organizer';
-import Step4Speakers from '@/pages/form-submission/steps/step-4-speakers';
-import Step5Submitter from '@/pages/form-submission/steps/step-5-submitter';
 
 const initialSpeaker: Speaker = {
     name: '',
@@ -37,6 +37,7 @@ export default function Create() {
     });
 
     const updateFormData = (data: Partial<ForumFormData>) => {
+        console.log('Updating form data with:', data);
         setFormData((prev) => ({ ...prev, ...data }));
     };
 
